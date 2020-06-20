@@ -58,6 +58,7 @@ async def news_source_category(source, category):
         final_dict = {**data, **sentiment}
 
         final_output.append(final_dict)
+        output = [dict for dict in final_output if dict.get('sentiment') == "positive" or dict.get('sentiment') == "neutral"]
     return final_output
 
 
@@ -109,7 +110,8 @@ async def news_source_category(category):
 
             per_source_data.append(final_dict)
         final_output.append(per_source_data)
-    return final_output
+        output = [dict for per_source_data in final_output for dict in per_source_data if dict.get('sentiment') == "positive" or dict.get('sentiment') == "neutral"]
+    return output
 
 
 @app.get("/categories")
