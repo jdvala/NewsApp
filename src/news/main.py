@@ -1,6 +1,7 @@
 from news.sources import Sources
 from news.sentiment import SentimentAnalysis
 from news.input_parser import FeedRawParser
+from news.get_source_data import GetSourceData
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -9,29 +10,42 @@ logger = logging.getLogger(__name__)
 class Main:
     def combine(self, source):
         sources = Sources()
+        get_data = GetSourceData()
         sentimentanalysis = SentimentAnalysis()
         parser = FeedRawParser()
-        final_output = []
-        feed_parsed = sources._get_source(source=source)
         
-        if not feed_parsed.get('entries'):
-            logger.error(f"No entries found for source {source}")
+        final_output = []
+        
+        # get source urls
+        source_urls = sources._get_all_rss_feed_urls(source)
+        
+        # get information about first url
+        source_url_link = source_urls[0].get('link')
+        source_category = source_urls[0].get('category')
+        source_source = source_urls[0].get('source')
 
-        for entry in feed_parsed['entries']:
-            # parse it
-            parsed_output = parser._feed_raw_parser(entry)
+        # get the actual data
+        source_data = get_data.get_source_data(source_url_link)
 
-            if parsed_output.get("summary") and parsed_output.get("title"):
-                sentiments = sentimentanalysis.sentiment_analysis(f"{parsed_output['title']}\n{parsed_output['summary']}")
-            elif parsed_output.get("title"):
-                logger.info("No summary found running sentiment analysis on title")
-                if parsed_output.get("title"):
-                    sentiments = sentimentanalysis.sentiment_analysis(parsed_output["title"])
-            
-            if sentiments:
-                final_output.append({**parsed_output, **sentiments})
+        # parse the data according to our needs
+        parsed_source_data = parser._parse(source_data, source_urls[0])
+
+        final_output = []
+        for data in parsed_source_data:
+            if data.get('entry_title') and data.get('entry_summary'):
+                text = f"{data['entry_title']}. {data['entry_summary']}"
+            elif data.get('entry_title') and not data.get('entry_summary'):
+                text = data['entry_title']
+            elif not data.get('entry_title') and data.get('entry_summary'):
+                text = data['entry_summary']
             else:
-                final_output.append(parsed_output)
-
-        return final_output
+                raise ValueError("No title or summary found parsed data.")
             
+            sentiment = sentimentanalysis.sentiment_analysis(text)
+
+            final_dict = {**data, **sentiment}
+        
+            final_output.append(final_dict)
+        return final_output
+        
+

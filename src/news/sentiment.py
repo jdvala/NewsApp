@@ -47,5 +47,5 @@ class SentimentAnalysis:
             "polarity": blob.sentiment.polarity,
             "subjectivity/objectivity": self.subjectivity,
             "subjectivity/objectivity_value": blob.sentiment.subjectivity,
-            "text": clean_text
+            "text_used_for_sentiment_analysis": clean_text
         }
