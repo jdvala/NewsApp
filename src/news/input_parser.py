@@ -11,9 +11,8 @@ class FeedRawParser:
         self.source_title = None
         self.source_updated = None
         self.source_image_url = None
-        self.source_category = None
+        self.source_category =  None
         self.source_name = None
-
         # Vars for entry
         self.entry_title = None
         self.entry_language = None
@@ -23,7 +22,7 @@ class FeedRawParser:
         self.entry_tags = []
         self.entry_published_on = None
 
-    def _feed_raw_parser(self, raw_input, source_details):
+    def _feed_raw_parser(self, raw_input, source_details, category, source_name):
         """Pareser for raw data from feedparser according to out needs.
 
         # Write here about which attributes we will be using
@@ -31,9 +30,11 @@ class FeedRawParser:
         Args:
             raw_input (Dict[List[Dict]]): Raw output from feedparser.
             source_details (Dict[str, str]): Details about the source
+            category (str): Category of the news.
+            source_name (str): Source slug of the news (for internal reference)
 
         Returns:
-            [type]: [description]
+            parsed_result (Dict): Parsed output according to our needs.
         """
         parsed_result = self._parse(raw_input)
         if not parsed_result:
@@ -69,9 +70,11 @@ class FeedRawParser:
 
 
 
-    def _parse(self, raw_input, source_details):
+    def _parse(self, raw_input, source_details, category, source_name=None):
         feed_details = self._get_feed_details(raw_input, source_details)
         entries = self._get_entries(raw_input, source_details)
+        self.source_name = source_name
+        self.source_category = category
 
         desired_output = []
         # Parse feed details
@@ -84,12 +87,6 @@ class FeedRawParser:
         if feed_details.get("image").get("href"):
             self.source_image_url = feed_details["image"]["href"]
         
-        # source details
-        if source_details.get("category"):
-            self.source_category = source_details["category"]
-        if source_details.get("source_name"):
-            self.source_name = source_details["source"]
-
         for entry in entries:
             # Parse entry
             if entry.get("title"):
@@ -110,9 +107,9 @@ class FeedRawParser:
                 self.entry_published_on = parse(entry["published"])
             
             desired_output.append({
-                "source_title": self.source_title,
-                "source_category": self.source_category,
                 "source_name": self.source_name,
+                "source_category": self.source_category,
+                "source_title": self.source_title,
                 "source_updated": self.source_updated,
                 "source_image_url": self.source_image_url,
                 "entry_title": self.entry_title,
@@ -120,7 +117,7 @@ class FeedRawParser:
                 "entry_summary": self.entry_summary,
                 "entry_rss_link": self.entry_rss_link,
                 "entry_article_url": self.entry_article_url,
-                "entry_tags": self.entry_tags,
+                "entry_tags": list(set(self.entry_tags)),
                 "entry_published_on": self.entry_published_on
             })
         
