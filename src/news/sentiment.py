@@ -1,8 +1,8 @@
 from bs4 import BeautifulSoup
 from textblob import TextBlob
 import logging
-from flair.models import TextClassifier
-from flair.data import Sentence
+# from flair.models import TextClassifier
+# from flair.data import Sentence
 
 
 logging.basicConfig(level=logging.INFO)
@@ -10,28 +10,27 @@ logger = logging.getLogger(__name__)
 
 class SentimentAnalysis:
     """Run sentiment analysis on text"""
-    def __init__(self, model=None):
+    def __init__(self):
         """Initialize sentiment analysis class with model preference
 
         Args:
             model (string): Type of model to run sentiment analysis with 
         """
-        self.model = model
+        # self.model = model
         self.sentiment = None
         self.polarity = None
         self.subjectivity = None
         self.subjectivity_value = None
         
         # if model = Flair then init flair model
-        if self.model == "Flair":
-            self.classifier = TextClassifier.load('en-sentiment')
+        # if self.model == "Flair":
+        #     self.classifier = TextClassifier.load('en-sentiment')
 
     def sentiment_analysis(self, text):
         clean_text = self._clean_and_validate_text(text)
-        if self.model == "Flair":
-            return self.sentiment_analysis_flair(clean_text)
-        else:
-            return self.sentiment_analysis_textblob(clean_text)
+        # if self.model == "Flair":
+        #     return self.sentiment_analysis_flair(clean_text)
+        return self.sentiment_analysis_textblob(clean_text)
 
 
     def _clean_and_validate_text(self, text):
@@ -41,19 +40,16 @@ class SentimentAnalysis:
 
         return BeautifulSoup(text, "html.parser").text
 
-    def sentiment_analysis_flair(self, clean_text):
-        text_flair = Sentence(clean_text)
-        classification = self.classifier(text_flair)
-        if not classification.lable:
-            logger.error(f"Flair could not classify the text {text_flair}.")
-            raise ValueError("Flair classification failed.")
-        # TODO: Add polarity value [Positive (1.0)] from label
-        return{
-            "sentiment": classification.lable,
-        }
-
-
-
+    # def sentiment_analysis_flair(self, clean_text):
+    #     text_flair = Sentence(clean_text)
+    #     classification = self.classifier(text_flair)
+    #     if not classification.lable:
+    #         logger.error(f"Flair could not classify the text {text_flair}.")
+    #         raise ValueError("Flair classification failed.")
+    #     # TODO: Add polarity value [Positive (1.0)] from label
+    #     return{
+    #         "sentiment": classification.lable,
+    #     }
 
     def sentiment_analysis_textblob(self, clean_text):
         text_blob = TextBlob(clean_text)
