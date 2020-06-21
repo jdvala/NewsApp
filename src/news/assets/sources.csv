@@ -1,27 +1,27 @@
-sources,category,link
-TOI,Education,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Most Recent Stories,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Opinion,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,World,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Astrology,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Cricket,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Business,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
+source,category,link
+TOI,Business,http://timesofindia.indiatimes.com/rssfeeds/1898055.cms
+TOI,Sports,http://timesofindia.indiatimes.com/rssfeeds/4719148.cms
+TOI,Tech,http://timesofindia.indiatimes.com/rssfeeds/66949542.cms
+TOI,Health,http://timesofindia.indiatimes.com/rssfeeds/3908999.cms
+TOI,NRI,http://timesofindia.indiatimes.com/rssfeeds/7098551.cms
+TOI,Astrology,https://timesofindia.indiatimes.com/rssfeeds/65857041.cms
+TOI,Environment,http://timesofindia.indiatimes.com/rssfeeds/2647163.cms
+TOI,Most Commented,http://timesofindia.indiatimes.com/rssfeedmostcommented.cms
+TOI,Life & Style,http://timesofindia.indiatimes.com/rssfeeds/2886704.cms
+TOI,Opinion,http://timesofindia.indiatimes.com/rssfeeds/784865811.cms
+TOI,Auto,https://timesofindia.indiatimes.com/rssfeeds/74317216.cms
+TOI,Cricket,http://timesofindia.indiatimes.com/rssfeeds/54829575.cms
+TOI,Entertainment,http://timesofindia.indiatimes.com/rssfeeds/1081479906.cms
+TOI,Most Read,http://timesofindia.indiatimes.com/rssfeedmostread.cms
+TOI,Most Shared,http://timesofindia.indiatimes.com/rssfeedmostemailed.cms
+TOI,Education,http://timesofindia.indiatimes.com/rssfeeds/913168846.cms
+TOI,India,http://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms
+TOI,Most Recent Stories,http://timesofindia.indiatimes.com/rssfeeds/1221656.cms
+TOI,Science,http://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms
+TOI,Sunday TOI,http://timesofindia.indiatimes.com/rssfeeds/1945062111.cms
+TOI,US,https://timesofindia.indiatimes.com/rssfeeds_us/72258322.cms
 TOI,Top Stories,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Most Commented,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Health,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Auto,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,NRI,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Environment,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Most Shared,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,India,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Most Read,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Sports,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Entertainment,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Sunday TOI,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Life & Style,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Tech,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,US,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,Science,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
+TOI,World,http://timesofindia.indiatimes.com/rssfeeds/296589292.cms
 NDTV,Sports,https://feeds.feedburner.com/ndtvsports-latest
 NDTV,Trending Stories,https://feeds.feedburner.com/ndtvnews-trending-news
 NDTV,Cities,https://feeds.feedburner.com/ndtvnews-cities-news

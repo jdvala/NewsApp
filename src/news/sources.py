@@ -75,6 +75,7 @@ class Sources:
                 {   
                     "link": row['link'],
                     "category": row['category'],
+                    "source": row['source'],
                 }
             )
 

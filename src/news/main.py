@@ -18,6 +18,18 @@ async def root():
 
 @app.get("/news/{source}/{category}")
 async def news_source_category(source, category):
+    """Get news for a specific source and sepcific categry.
+
+    Args:
+        source (string): Souce name.
+        category (string): Category of news
+
+    Raises:
+        ValueError: If `Summary` or `Text` is not found in the the parsed news rss feed. 
+
+    Returns:
+        final_output [List[Dict]]: News from a specified source and category.
+    """
     sources = Sources()
     get_data = GetSourceData()
     sentimentanalysis = SentimentAnalysis()
@@ -53,7 +65,7 @@ async def news_source_category(source, category):
         else:
             raise ValueError("No title or summary found parsed data.")
         
-        sentiment = sentimentanalysis.sentiment_analysis(text)
+        sentiment = sentimentanalysis.sentiment_analysis(text=text)
 
         final_dict = {**data, **sentiment}
 
@@ -65,16 +77,16 @@ async def news_source_category(source, category):
 
 @app.get("/news/{category}")
 async def news_source_category(category):
-    """Get news per category
+    """Get news per category.
 
     Args:
-        category ([type]): [description]
+        category (string): News category you want to query
 
     Raises:
-        ValueError: [description]
+        ValueError: If `Summary` or `Text` is not found in the the parsed news rss feed.
 
     Returns:
-        [type]: [description]
+        output [List[List[Dict]]]: News of category sepcified from all the sources.
     """
     sources = Sources()
     get_data = GetSourceData()
@@ -85,9 +97,11 @@ async def news_source_category(category):
 
     source_url_link = []
     source_details = []
+    source_name = []
     for source_url in source_urls_details:
          if source_url.get('link'):
             source_url_link.append(source_url['link'])
+            source_name.append(source_url['source'])
             source_details.append(source_url)   
 
 
@@ -98,8 +112,8 @@ async def news_source_category(category):
 
     # parse the data according to our needs
     parsed_source_data_all_sources = []
-    for source_data, source_detail in zip(sources_data, source_details):
-        parsed_source_data_all_sources.append(parser._parse(source_data, source_detail, category))
+    for source_data, source_detail, name_of_source in zip(sources_data, source_details, source_name):
+        parsed_source_data_all_sources.append(parser._parse(source_data, source_detail, category, name_of_source))
 
 
     final_output = []
@@ -115,7 +129,7 @@ async def news_source_category(category):
             else:
                 raise ValueError("No title or summary found parsed data.")
             
-            sentiment = sentimentanalysis.sentiment_analysis(text)
+            sentiment = sentimentanalysis.sentiment_analysis(text=text)
 
             final_dict = {**data, **sentiment}
 

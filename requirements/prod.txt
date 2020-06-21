@@ -2,3 +2,5 @@ feedparser
 python-dateutil
 textblob
 bs4
+fastapi
+flair
