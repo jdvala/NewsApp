@@ -65,6 +65,17 @@ async def news_source_category(source, category):
 
 @app.get("/news/{category}")
 async def news_source_category(category):
+    """Get news per category
+
+    Args:
+        category ([type]): [description]
+
+    Raises:
+        ValueError: [description]
+
+    Returns:
+        [type]: [description]
+    """
     sources = Sources()
     get_data = GetSourceData()
     sentimentanalysis = SentimentAnalysis()
