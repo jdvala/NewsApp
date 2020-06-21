@@ -1,3 +1,4 @@
+ 
 import os.path as path
 
 from setuptools import find_packages, setup
@@ -25,8 +26,8 @@ def read_readme(path):
 
 
 setup(
-    name="news",
-    description="Parse and present news from various news sources",
+    name="kvell",
+    description="News app with only positive news",
     version="0.1.0",
     long_description=read_readme(readme_path),
     long_description_content_type="text/markdown",
@@ -51,6 +52,6 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
     ],
-    keywords="News RSS python", 
-    license="MIT"
+    keywords="news",
+    license="MIT",
 )
