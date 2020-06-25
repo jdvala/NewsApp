@@ -111,7 +111,7 @@ class FeedRawParser:
             # attach uuid to each news item
             self.uuid = uuid.uuid1()
             desired_output.append({
-                "uuid": self.uuid,
+                "id": self.uuid,
                 "source_name": self.source_name,
                 "source_category": self.source_category,
                 "source_title": self.source_title,
