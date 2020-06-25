@@ -1,5 +1,6 @@
 from dateutil.parser import parse
 import logging
+import uuid
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -8,6 +9,7 @@ class FeedRawParser:
     """Raw RSS feed parser"""
     def __init__(self):
         # Var for source
+        self.uuid = None
         self.source_title = None
         self.source_updated = None
         self.source_image_url = None
@@ -106,7 +108,10 @@ class FeedRawParser:
             if entry.get("published"):
                 self.entry_published_on = parse(entry["published"])
             
+            # attach uuid to each news item
+            self.uuid = uuid.uuid1()
             desired_output.append({
+                "uuid": self.uuid,
                 "source_name": self.source_name,
                 "source_category": self.source_category,
                 "source_title": self.source_title,
