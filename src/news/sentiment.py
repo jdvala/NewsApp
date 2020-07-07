@@ -27,13 +27,13 @@ class SentimentAnalysis:
         #     self.classifier = TextClassifier.load('en-sentiment')
 
     def sentiment_analysis(self, text):
-        clean_text = self._clean_and_validate_text(text)
+        clean_text = self.clean_and_validate_text(text)
         # if self.model == "Flair":
         #     return self.sentiment_analysis_flair(clean_text)
         return self.sentiment_analysis_textblob(clean_text)
 
 
-    def _clean_and_validate_text(self, text):
+    def clean_and_validate_text(self, text):
         if not isinstance(text, str):
             logger.error(f"Provided input is not a string but is of class {type(text)}")
             return

@@ -57,18 +57,23 @@ class Sources:
         
         return source_link_details
 
-    def _get_all_rss_feed_urls_category(self, category):
+    def _get_all_rss_feed_urls_category(self, category=None, is_all=False):
         """Get the rss feed urls for a source
 
         Args:
             source (String): source from the dataframe.
+            is_all (bool): To get all the news rss feed or not.
         
         Returns:
             source_and_category (List[Dict[str, str]]): A dictonary of source rss links and its categories.
         """
         dataframe = self._load_dataframe()
 
-        source_dataframe = dataframe[dataframe["category"] == category]
+        if category:
+            source_dataframe = dataframe[dataframe["category"] == category]
+        if is_all:
+            source_dataframe = dataframe
+        
         source_link_details = []
         for index, row in source_dataframe.iterrows():
             source_link_details.append(
@@ -89,5 +94,3 @@ class Sources:
         dataframe = self._load_dataframe()
 
         return list(set(dataframe['category'].tolist()))
-
-    

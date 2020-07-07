@@ -1,5 +1,6 @@
 from dateutil.parser import parse
 import logging
+from news.sentiment import SentimentAnalysis
 import uuid
 
 logging.basicConfig(level=logging.INFO)
@@ -23,6 +24,7 @@ class FeedRawParser:
         self.entry_summary = None
         self.entry_tags = []
         self.entry_published_on = None
+        self.text_cleaner = SentimentAnalysis()
 
     def _feed_raw_parser(self, raw_input, source_details, category, source_name):
         """Pareser for raw data from feedparser according to out needs.
@@ -53,7 +55,8 @@ class FeedRawParser:
             entries (Dict): Entries for a given source
         """
         if not raw_input.get("entries"):
-            raise ValueError(f"No entries found for source: {source_details.get('source')}")
+            logger.error(f"No entries found for source: {source_details.get('source')}")
+            return None
         return raw_input["entries"]
 
 
@@ -67,7 +70,8 @@ class FeedRawParser:
             desired_output (List[Dict]): Final Output before sentiment analysis
         """
         if not raw_input.get("feed"):
-            raise ValueError(f"No entries found for source: {source_details.get('source')}")
+            logger.error(f"No entries found for source: {source_details.get('source')}")
+            return None
         return raw_input["feed"]
 
 
@@ -75,6 +79,9 @@ class FeedRawParser:
     def _parse(self, raw_input, source_details, category, source_name=None):
         feed_details = self._get_feed_details(raw_input, source_details)
         entries = self._get_entries(raw_input, source_details)
+        if not entries:
+            logger.error(f"No entries for {source_details.get('source')}")
+            return {}
         self.source_name = source_name
         self.source_category = category
 
@@ -86,17 +93,17 @@ class FeedRawParser:
             self.source_title = source_details.get("source")
         if feed_details.get("updated"):
             self.source_updated = feed_details["updated"]
-        if feed_details.get("image").get("href"):
+        if feed_details.get("image", {}).get("href"):
             self.source_image_url = feed_details["image"]["href"]
         
         for entry in entries:
             # Parse entry
             if entry.get("title"):
                 self.entry_title = entry["title"]
-            if entry.get("title_detail").get("language"):
+            if entry.get("title_detail", {}).get("language"):
                 self.entry_language = entry["title_detail"]["language"]
             if entry.get("summary"):
-                self.entry_summary = entry["summary"]
+                self.entry_summary = self.text_cleaner.clean_and_validate_text(entry["summary"])
             if entry.get("link"):
                 self.entry_rss_link = entry["link"]
             if entry.get("id"):
