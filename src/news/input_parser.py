@@ -3,7 +3,6 @@ import logging
 from news.sentiment import SentimentAnalysis
 import uuid
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class FeedRawParser:
@@ -19,7 +18,6 @@ class FeedRawParser:
         # Vars for entry
         self.entry_title = None
         self.entry_language = None
-        self.entry_rss_link = None
         self.entry_article_url = None
         self.entry_summary = None
         self.entry_tags = []
@@ -105,9 +103,7 @@ class FeedRawParser:
             if entry.get("summary"):
                 self.entry_summary = self.text_cleaner.clean_and_validate_text(entry["summary"])
             if entry.get("link"):
-                self.entry_rss_link = entry["link"]
-            if entry.get("id"):
-                self.entry_article_url = entry["id"]
+                self.entry_article_url = entry["link"]
             if entry.get("tags"):
                 for tag_info in entry["tags"]:
                     if tag_info.get("term"):
@@ -127,7 +123,6 @@ class FeedRawParser:
                 "entry_title": self.entry_title,
                 "entry_language": self.entry_language,
                 "entry_summary": self.entry_summary,
-                "entry_rss_link": self.entry_rss_link,
                 "entry_article_url": self.entry_article_url,
                 "entry_tags": list(set(self.entry_tags)),
                 "entry_published_on": self.entry_published_on

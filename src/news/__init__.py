@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
+from datetime import datetime
 
 from pkg_resources import DistributionNotFound, get_distribution
 
@@ -13,5 +14,7 @@ finally:
     del get_distribution, DistributionNotFound
 
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger()
+logging.basicConfig(filename=f'/home/jay/feelgood_logs/{datetime.date(datetime.now())}.txt', 
+                    level=logging.INFO,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)

@@ -1,61 +1,36 @@
 source,category,link
-TOI,Business,http://timesofindia.indiatimes.com/rssfeeds/1898055.cms
-TOI,Sports,http://timesofindia.indiatimes.com/rssfeeds/4719148.cms
-TOI,Tech,http://timesofindia.indiatimes.com/rssfeeds/66949542.cms
-TOI,Health,http://timesofindia.indiatimes.com/rssfeeds/3908999.cms
-TOI,NRI,http://timesofindia.indiatimes.com/rssfeeds/7098551.cms
-TOI,Astrology,https://timesofindia.indiatimes.com/rssfeeds/65857041.cms
-TOI,Environment,http://timesofindia.indiatimes.com/rssfeeds/2647163.cms
-TOI,Most Commented,http://timesofindia.indiatimes.com/rssfeedmostcommented.cms
-TOI,Life & Style,http://timesofindia.indiatimes.com/rssfeeds/2886704.cms
-TOI,Opinion,http://timesofindia.indiatimes.com/rssfeeds/784865811.cms
-TOI,Auto,https://timesofindia.indiatimes.com/rssfeeds/74317216.cms
-TOI,Cricket,http://timesofindia.indiatimes.com/rssfeeds/54829575.cms
-TOI,Entertainment,http://timesofindia.indiatimes.com/rssfeeds/1081479906.cms
-TOI,Most Read,http://timesofindia.indiatimes.com/rssfeedmostread.cms
-TOI,Most Shared,http://timesofindia.indiatimes.com/rssfeedmostemailed.cms
-TOI,Education,http://timesofindia.indiatimes.com/rssfeeds/913168846.cms
-TOI,India,http://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms
-TOI,Most Recent Stories,http://timesofindia.indiatimes.com/rssfeeds/1221656.cms
-TOI,Science,http://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms
-TOI,Sunday TOI,http://timesofindia.indiatimes.com/rssfeeds/1945062111.cms
-TOI,US,https://timesofindia.indiatimes.com/rssfeeds_us/72258322.cms
-TOI,Top Stories,http://timesofindia.indiatimes.com/rssfeedstopstories.cms
-TOI,World,http://timesofindia.indiatimes.com/rssfeeds/296589292.cms
-NDTV,Sports,https://feeds.feedburner.com/ndtvsports-latest
-NDTV,Trending Stories,https://feeds.feedburner.com/ndtvnews-trending-news
-NDTV,Cities,https://feeds.feedburner.com/ndtvnews-cities-news
-NDTV,Health,https://feeds.feedburner.com/ndtvcooks-latest
-NDTV,Videos,https://feeds.feedburner.com/ndtv/latest-videos
-NDTV,Tech,https://feeds.feedburner.com/gadgets360-latest
+Times of India,Economy,http://timesofindia.indiatimes.com/rssfeeds/1898055.cms
+Times of India,Sports,http://timesofindia.indiatimes.com/rssfeeds/671208.cms
+Times of India,Health,http://timesofindia.indiatimes.com/rssfeeds/3908999.cms
+Times of India,India,http://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms
+Times of India,Technology,https://timesofindia.indiatimes.com/rssfeeds/66949542.cms
+Times of India,Cricket,https://timesofindia.indiatimes.com/rssfeeds/54829575.cms
 NDTV,India,https://feeds.feedburner.com/ndtvnews-india-news
 NDTV,Business,https://feeds.feedburner.com/ndtvprofit-latest
-NDTV,Auto,https://feeds.feedburner.com/carandbike-latest
-NDTV,World,https://feeds.feedburner.com/ndtvnews-world-news
-NDTV,Latest Stories,https://feeds.feedburner.com/ndtvnews-latest
-NDTV,Hindi,https://feeds.feedburner.com/ndtvkhabar-latest
-NDTV,People,https://feeds.feedburner.com/ndtvnews-people
-NDTV,Indians Abroad,https://feeds.feedburner.com/ndtvnews-indians-abroad
-NDTV,Top Stories,https://feeds.feedburner.com/ndtvnews-top-stories
-NDTV,Movies,https://feeds.feedburner.com/ndtvmovies-latest
-NDTV,South,https://feeds.feedburner.com/ndtvnews-south
-NDTV,Offbeat,https://feeds.feedburner.com/ndtvnews-offbeat-news
-NDTV,Cricket,https://feeds.feedburner.com/ndtvsports-cricket
-INDIA_TODAY,Glass House,https://www.indiatoday.in/rss/1206610
-INDIA_TODAY,Cover Story,https://www.indiatoday.in/rss/1206509
-INDIA_TODAY,Videos,https://www.indiatoday.in/rss-video
-INDIA_TODAY,Economy,https://www.indiatoday.in/rss/1206513
-INDIA_TODAY,Offtrack,https://www.indiatoday.in/rss/1206503
-INDIA_TODAY,Home,https://www.indiatoday.in/rss/home
-INDIA_TODAY,Your Week,https://www.indiatoday.in/rss/1206506
-INDIA_TODAY,States,https://www.indiatoday.in/rss/1206500
-INDIA_TODAY,Society and The Arts,https://www.indiatoday.in/rss/1206504
-INDIA_TODAY,Leisure,https://www.indiatoday.in/rss/1206551
-INDIA_TODAY,World,https://www.indiatoday.in/rss/1206577
-INDIA_TODAY,Sport,https://www.indiatoday.in/rss/1206550
-INDIA_TODAY,Glossary,https://www.indiatoday.in/rss/1206613
-INDIA_TODAY,Photos,https://www.indiatoday.in/rss-gallery
-INDIA_TODAY,Eyecatchers,https://www.indiatoday.in/rss/1206494
-INDIA_TODAY,The Big Story,https://www.indiatoday.in/rss/1206614
-INDIA_TODAY,Nation,https://www.indiatoday.in/rss/1206514
-INDIA_TODAY,Top Stories,https://www.indiatoday.in/rss/1206584
+NDTV,Technology,https://feeds.feedburner.com/gadgets360-latest
+NDTV Gadgets360,Technology,https://cdn.gadgets360.com/gadgets360_logo.png
+News18,India,https://www.news18.com/rss/india.xml
+News18,Business,https://www.news18.com/rss/business.xml 
+ESPN,Cricket,https://www.espncricinfo.com/rss/content/story/feeds/6.xml
+The Cricket Times,Cricket,https://www.crickettimes.com/feed
+The Indian Express,Cricket,https://indianexpress.com/section/sports/cricket/feed/
+News18,Football,https://www.news18.com/rss/football.xml
+News18,Technology,https://www.news18.com/rss/tech.xml
+The Hindu,Economy,http://www.thehindu.com/business/Economy/?service=rss
+Economic Times,Economy,https://economictimes.indiatimes.com/rssfeeds/1286551815.cms
+First Post,Economy,http://www.firstpost.com/economy/feed
+Economic Times,Agriculture,https://economictimes.indiatimes.com/rssfeeds/1202099874.cms
+The Hindu,Agriculture,http://www.thehindu.com/sci-tech/agriculture/?service=rss
+The Hindi,Sports,http://www.thehindu.com/sport/other-sports/?service=rss
+NDTV,Sports,https://feeds.feedburner.com/ndtvsports-latest
+News18,Sports,https://www.news18.com/rss/sports.xml
+Economic Times,Entertainment,https://economictimes.indiatimes.com/rssfeeds/13357410.cms
+Times of India,Entertainment,https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms
+The Hindu,Entertainment,https://www.thehindu.com/entertainment/feeder/default.rss
+The Hindu,International,http://www.thehindu.com/news/international/?service=rss
+The Indian Express,International,https://indianexpress.com/section/world/feed/
+Hindustan Times,International,http://www.hindustantimes.com/rss/world/rssfeed.xml
+Times of India,International,https://timesofindia.indiatimes.com/rssfeeds/296589292.cms
+The Indian Express,Science,https://indianexpress.com/section/technology/feed/
+Times of India,Science,https://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms
+The Hindu,Science,http://www.thehindu.com/sci-tech/science/?service=rss

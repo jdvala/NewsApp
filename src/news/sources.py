@@ -2,7 +2,6 @@ import logging
 import pandas as pd
 from pathlib import Path
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
@@ -10,6 +9,7 @@ class Sources:
     """Define sources"""
     def __init__(self):
        self.df_path = Path(__file__).parent.parent.parent/ "src" /"news" / "assets" / "sources.csv"
+       
     
     def _load_dataframe(self):
         df = pd.read_csv(self.df_path)
